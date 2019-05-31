@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>class, extends, get, set, super keywords</title>
+</head>
+
+<body>
+    <script>
+
+        //creates class Vehicle
+
+        class Vehicle {
+
+            constructor(type) {
+
+                Vehicle.VehicleCount++;
+
+                this.type = type;
+
+            }
+
+            drive() {
+
+                console.log('Vehicle is driving');
+            }
+        }
+
+        Vehicle.VehicleCount = 0;
+
+        const vehicle = new Vehicle('Toyota');
+
+        vehicle.drive();   //prints  Vehicle is driving
+
+        console.log(Vehicle.VehicleCount);   //prints 1
+
+        //extends 
+        /*The extends keyword is used in class declarations or class expressions
+        * to create a class as a child of another class
+        */
+
+        class Car extends Vehicle {
+
+            constructor(type) {
+
+                //super keyword is used to call corresponding methods of super class
+
+                super(type);
+
+            }
+
+            balanceWheels() {
+
+                console.log('Wheels are balanced');
+
+            }
+        }
+
+        const car = new Car('Nissan');
+
+        car.drive();   //prints  Vehicle is driving
+
+        car.balanceWheels();   //prints Wheels are balanced
+
+        console.log(Vehicle.VehicleCount);   //prints 2
+
+    </script>
+
+</body>
+
+</html>

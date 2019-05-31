@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>async/await keywords</title>
+</head>
+
+<body>
+    <script>
+
+        /*The async function declaration defines an asynchronous function
+        * which returns an AsyncFunction object
+        * An asynchronous function is a function which operates asynchronously via the event loop
+        * using an implicit Promise to return its result
+        * But the syntax and structure of code using async functions is much more like using standard synchronous functions
+        */
+
+
+        async function fetchUsersAsync() {
+
+            /*The await expression causes async function execution to pause until a Promise is resolved
+            * that is fulfilled or rejected, and to resume execution of the async function after fulfillment
+            * When resumed, the value of the await expression is that of the fulfilled Promise
+            * */
+
+            const response = await fetch('https://api.github.com/users');
+
+            const json = await response.json();
+
+            console.log(json);
+
+        }
+
+        fetchUsersAsync();
+
+    </script>
+
+</body>
+
+</html>

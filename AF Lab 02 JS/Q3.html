@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Function to call Github API</title>
+</head>
+
+<body>
+    <script>
+
+        //prints all users to console
+
+        function fetchUsers() {
+            fetch('https://api.github.com/users').then(function (response) {
+                return response.json();
+            }).then(function (json) {
+                console.log(json);
+            });
+        }
+
+        fetchUsers();
+
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        //return fetched users and print it in the caller
+
+        function fetchUsers() {
+            return fetch('https://api.github.com/users')
+                .then(response => response.json());
+        }
+
+        fetchUsers().then(function (json) {
+            console.log(json);
+        });
+
+    </script>
+
+</body>
+
+</html>

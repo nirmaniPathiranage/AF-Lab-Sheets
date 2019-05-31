@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Classes in JavaScript</title>
+</head>
+
+<body>
+    <script>
+
+        //creates a class using a function
+
+        function Vehicle(type) {
+
+            //increase the number of VehicleCount
+
+            Vehicle.VehicleCount++;
+
+            this.type = type;
+
+        }
+
+        //a static variable
+
+        Vehicle.VehicleCount = 0;
+
+        //function to its prototype
+
+        Vehicle.prototype.drive = function () {
+
+            console.log('Vehicle is driving');
+
+        };
+
+
+        //an object from Vehicle class
+
+        var vehicle = new Vehicle('Toyota');
+
+        //creates a class called Car
+
+        function Car(type) {
+
+            Vehicle.call(this, type);
+
+        }
+
+        //extends the class Vehicle
+
+        Car.prototype = Object.create(Vehicle.prototype);
+
+        Car.prototype.constructor = Car;
+
+        //newly added method
+
+        Car.prototype.balanceWheels = function () {
+
+            console.log('Wheels are balanced');
+
+        };
+
+        var car = new Car('Nissan');
+
+        car.drive();   //prints Vehicle is driving
+
+        car.balanceWheels();   //prints Wheels are balanced
+
+        console.log(car.type, Vehicle.VehicleCount);   //prints Nissan 2
+
+    </script>
+
+</body>
+
+</html>

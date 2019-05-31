@@ -1,0 +1,6 @@
+com\app\springbootrestwithmongo\SpringBootMongoApplication.class
+com\app\springbootrestwithmongo\model\Comment.class
+com\app\springbootrestwithmongo\controller\CommentController.class
+com\app\springbootrestwithmongo\service\CommentServiceImpl.class
+com\app\springbootrestwithmongo\service\CommentService.class
+com\app\springbootrestwithmongo\service\CommentRepository.class

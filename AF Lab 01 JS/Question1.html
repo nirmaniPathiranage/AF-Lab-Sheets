@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Basic concepts in JavaScript Programming Language</title>
+    <script>
+
+        //function as a variable 
+        //function expression that prints Hello World
+
+        var first = function () {
+            console.log("Hello World");
+        }
+
+        //other function which accepts a variable
+
+        function second(callback) {
+
+            //the argument passed is executed as a function inside the body
+
+            callback();
+        }
+
+        //calling back the second function passing the first function as the
+        //argument
+
+        second(first);   //prints Hello world
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

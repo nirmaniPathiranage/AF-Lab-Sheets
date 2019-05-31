@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Create JSON like JavaScript objects</title>
+</head>
+
+<body>
+
+    <script>
+
+        function example() {
+            console.log("Hello World");
+        }
+
+        //using curly brackets to create JSON like JavaScript object
+        //add properties and functions to the object
+
+        var Person = {
+            name: "Kishan Fernando",
+            age: 23,
+            address: "Kandy",
+
+            functionName: function () {
+                console.log("I am a Function");
+            }(),
+
+            helloFunction: example(),
+
+        };
+
+        document.write("My name is " + Person.name);   //prints 'My name is Kishan Fernando' 
+        document.write("<br>My Age is " + Person.age);   //prints 'My Age is 23'
+        document.write("<br>My Address is " + Person.address);   //prints 'My Address is Kandy'
+
+        document.write("<br>Executed function : Check the console");   //prints 'Executed function : Check the console'
+
+        Person.functionName;   //prints 'I am a Function'
+        Person.helloFunction;   //prints 'Hello World'
+
+
+    </script>
+
+</body>
+
+</html>

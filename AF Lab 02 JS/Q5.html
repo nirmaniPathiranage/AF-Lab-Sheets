@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Declare variables using const and let</title>
+</head>
+
+<body>
+    <script>
+
+        //let
+        //Use block scope in programming
+        //for every block let create its own new scope which cannot be accessed in outside of that block
+        //value can be changed as many times as we want
+
+        let vehicleName = 'Toyota';
+
+        console.log(vehicleName);  //prints Toyota
+        console.log(this.vehicleName);   //prints undefined
+
+        vehicleName = 'Nissan';
+
+        console.log(vehicleName);   //prints Nissan
+        console.log(this.vehicleName);   //prints undefined
+
+
+        //const
+        //allows to be immutable with variables
+        //const declarations must be initialized
+
+        const COUNTRY = 'Japan';
+
+        console.log(COUNTRY);   //prints Japan
+        console.log(this.COUNTRY);   //prints undefined
+
+
+        /*Both the let and the const keyword are ways to declare block scoped variables
+        * There is one big difference though:
+        *Variables declared with let can be reassigned
+        *Variables declared with const have to be initialized when declared and can't be reassigned
+        */
+
+
+    </script>
+
+</body>
+
+</html>

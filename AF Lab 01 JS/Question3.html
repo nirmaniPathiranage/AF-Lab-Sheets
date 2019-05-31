@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Understand 'this' keyword in JavaScript </title>
+</head>
+
+<body>
+    <script>
+
+        // If we declare the variable let and do the same task
+        // we will get 'undefined' as the output because it is a scoped variable
+
+        //declaring a global variable in the window object
+
+        var vehicleName = "Benz";
+
+        //declaring a method to printout the vehicle name
+
+        var printVehiclName = function () {
+            console.log(this.vehicleName);
+        };
+
+        //declaring an object
+
+        //     var Vehicle = {
+        //         vehicleName : "Maruti",
+        //         getVehicleName : printVehiclName
+        //     };
+
+        //calling the method
+
+        printVehiclName();  //prints 'Benz'
+
+        //correcting
+
+        var Vehicle = {
+            vehicleName: "Maruti",
+            getVehicleName: printVehiclName
+        };
+
+        Vehicle.getVehicleName();   //prints 'Maruti'
+
+    </script>
+
+</body>
+
+</html>

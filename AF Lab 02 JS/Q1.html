@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Understand 'this' keyword in JavaScript</title>
+</head>
+
+<body>
+    <script>
+
+        //declaring a variable in the window object
+        //assign 'Toyota' 
+        //a global variable declaration
+
+        var vehicleName = 'Toyota';
+
+        //declaring a function to print out the vehicle name
+
+        function printVehicleNameOuter() {
+            console.log(this.vehicleName);
+        }
+
+        //printing window object to console
+
+        console.log(window);   //prints [object Window]
+
+        //printing this to console
+
+        console.log(this);   //prints [object Window]
+
+        console.log(this === window);   //prints true
+
+
+        //calling the function printVehicleNameOuter
+
+        printVehicleNameOuter();   //prints Toyota 
+
+        //declaring an object with a variable and a function
+        //using object literal notation
+
+        var vehicle = {
+            vehicleName: 'Nissan',
+            printVehicleNameInner: printVehicleNameOuter
+        };
+
+        vehicle.printVehicleNameInner();
+
+        var vehicle = {
+            vehicleName: 'Nissan',
+            printVehicleNameInner: function () {
+                return function () {
+                    console.log(this.vehicleName);
+                }
+            }
+        };
+
+        var execute = vehicle.printVehicleNameInner();
+        execute();
+
+        execute.call(vehicle);
+
+        var execute = vehicle.printVehicleNameInner().bind(vehicle);
+        execute();
+
+    </script>
+
+</body>
+
+</html>

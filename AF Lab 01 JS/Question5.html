@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Function to call Github API</title>
+</head>
+
+<body>
+    <script>
+
+        function getAllUsers() {
+            var responseObject = JSON.parse(this.responseText);
+            console.log(responseObject);
+        };
+
+        var request = new XMLHttpRequest();
+        request.onload = getAllUsers;
+        request.open('get', 'https://api.github.com/users', true);
+        request.send();
+
+    </script>
+
+</body>
+
+</html>
